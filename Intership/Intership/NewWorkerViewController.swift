@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 private enum CellType: Int {
     case imageCell
@@ -18,10 +19,15 @@ private enum CellType: Int {
 
 class NewWorkerViewController: UITableViewController {
     
+    private var image: URL?
+    private var name: String?
+    private var surname: String?
+    private var birthday: String?
     private var companyName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     // MARK: - Table view data source
@@ -43,37 +49,49 @@ class NewWorkerViewController: UITableViewController {
         switch cellType {
         case .imageCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as! ImageTableViewCell
+           
+//            let url = URL(string: "https://picsum.photos/150/150")
+//            cell.avatar.kf.setImage(with: url)
+           
             baseCell = cell
             
         case .nameCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextFieldTableViewCell", for: indexPath) as! TextFieldTableViewCell
             cell.textField.placeholder = "Name"
+            cell.textFieldDidChange = {[weak self] text in
+                self?.name = text
+            }
             baseCell = cell
-
+            
         case .surnameCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextFieldTableViewCell", for: indexPath) as! TextFieldTableViewCell
             cell.textField.placeholder = "Surname"
+            cell.textFieldDidChange = {[weak self] text in
+                self?.surname = text
+            }
             baseCell = cell
-
+            
         case .birthDayCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextFieldTableViewCell", for: indexPath) as! TextFieldTableViewCell
             cell.textField.placeholder = "Birthday"
+            cell.textFieldDidChange = {[weak self] text in
+                self?.birthday = text
+            }
             baseCell = cell
-
+            
         case .companyCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyTableViewCell", for:indexPath) as! CompanyTableViewCell
             
             cell.companyText.text = companyName ?? "Company"
             
             baseCell = cell
-
+            
         case .controlButtonCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ButtonTableViewCell", for:indexPath) as! ButtonTableViewCell
             cell.didPressControlButton = {[weak self] in
+                self?.saveData()
                 self?.showAlert()
             }
-            
-            
             baseCell = cell
         }
         
@@ -82,7 +100,7 @@ class NewWorkerViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView,
-                   viewForFooterInSection section: Int) -> UIView? {
+                            viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
     
@@ -99,6 +117,7 @@ class NewWorkerViewController: UITableViewController {
             
             self.navigationController?.pushViewController(companiesListTableViewController!, animated: true)
         }
+        
     }
     
     private func showAlert() {
@@ -114,6 +133,25 @@ class NewWorkerViewController: UITableViewController {
                             handler: nil))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func saveData() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "WorkerEntity", in: context)!
+        let worker = WorkerEntity(entity: entity, insertInto: context)
+        
+        worker.name = name
+        worker.second_name = surname
+        worker.birthday = birthday
+        worker.company = companyName
+        
+        do {
+            try context.save()
+        } catch (let error){
+            print(error.localizedDescription)
+        }
     }
 }
 

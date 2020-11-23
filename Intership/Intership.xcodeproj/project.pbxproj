@@ -18,9 +18,12 @@
 		2E3EDC30256A963100A0690F /* CompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3EDC2F256A963100A0690F /* CompanyTableViewCell.swift */; };
 		2E3EDC33256A978500A0690F /* CompanyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3EDC32256A978500A0690F /* CompanyListTableViewController.swift */; };
 		2E3EDC36256A97EA00A0690F /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3EDC35256A97EA00A0690F /* ButtonTableViewCell.swift */; };
+		2E3EDC53256AE4C500A0690F /* IntershipModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E3EDC51256AE4C500A0690F /* IntershipModel.xcdatamodeld */; };
+		8714F51BB266FAEA7A5B8817 /* Pods_Intership.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD0A72EB55A6BB24458786C /* Pods_Intership.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DD0A72EB55A6BB24458786C /* Pods_Intership.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Intership.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E3EDC0E256A87EF00A0690F /* Intership.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Intership.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E3EDC11256A87EF00A0690F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E3EDC13256A87EF00A0690F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +37,9 @@
 		2E3EDC2F256A963100A0690F /* CompanyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTableViewCell.swift; sourceTree = "<group>"; };
 		2E3EDC32256A978500A0690F /* CompanyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListTableViewController.swift; sourceTree = "<group>"; };
 		2E3EDC35256A97EA00A0690F /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
+		2E3EDC52256AE4C500A0690F /* IntershipModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IntershipModel.xcdatamodel; sourceTree = "<group>"; };
+		97D6B85F21EE5130061FFDA2 /* Pods-Intership.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intership.release.xcconfig"; path = "Target Support Files/Pods-Intership/Pods-Intership.release.xcconfig"; sourceTree = "<group>"; };
+		E44AA4B1FFECCCF149EEC490 /* Pods-Intership.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intership.debug.xcconfig"; path = "Target Support Files/Pods-Intership/Pods-Intership.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +47,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8714F51BB266FAEA7A5B8817 /* Pods_Intership.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21D72A19D1FB80D48FC7CE43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E44AA4B1FFECCCF149EEC490 /* Pods-Intership.debug.xcconfig */,
+				97D6B85F21EE5130061FFDA2 /* Pods-Intership.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2E3EDC05256A87EF00A0690F = {
 			isa = PBXGroup;
 			children = (
 				2E3EDC10256A87EF00A0690F /* Intership */,
 				2E3EDC0F256A87EF00A0690F /* Products */,
+				21D72A19D1FB80D48FC7CE43 /* Pods */,
+				DCEC957B99358C038953CF38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +88,7 @@
 				2E3EDC11256A87EF00A0690F /* AppDelegate.swift */,
 				2E3EDC13256A87EF00A0690F /* SceneDelegate.swift */,
 				2E3EDC17256A87EF00A0690F /* Main.storyboard */,
+				2E3EDC51256AE4C500A0690F /* IntershipModel.xcdatamodeld */,
 				2E3EDC38256A996E00A0690F /* TableViewCells */,
 				2E3EDC26256A88CA00A0690F /* NewWorkerViewController.swift */,
 				2E3EDC32256A978500A0690F /* CompanyListTableViewController.swift */,
@@ -90,6 +110,14 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
+		DCEC957B99358C038953CF38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DD0A72EB55A6BB24458786C /* Pods_Intership.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -97,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E3EDC22256A87F000A0690F /* Build configuration list for PBXNativeTarget "Intership" */;
 			buildPhases = (
+				12788316C9AD2E79E199409C /* [CP] Check Pods Manifest.lock */,
 				2E3EDC0A256A87EF00A0690F /* Sources */,
 				2E3EDC0B256A87EF00A0690F /* Frameworks */,
 				2E3EDC0C256A87EF00A0690F /* Resources */,
+				B36471CC2C1DFF77B10D1A7A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +185,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		12788316C9AD2E79E199409C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Intership-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B36471CC2C1DFF77B10D1A7A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Intership/Pods-Intership-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Intership/Pods-Intership-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Intership/Pods-Intership-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2E3EDC0A256A87EF00A0690F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -162,6 +234,7 @@
 			files = (
 				2E3EDC36256A97EA00A0690F /* ButtonTableViewCell.swift in Sources */,
 				2E3EDC33256A978500A0690F /* CompanyListTableViewController.swift in Sources */,
+				2E3EDC53256AE4C500A0690F /* IntershipModel.xcdatamodeld in Sources */,
 				2E3EDC12256A87EF00A0690F /* AppDelegate.swift in Sources */,
 				2E3EDC2A256A959F00A0690F /* ImageTableViewCell.swift in Sources */,
 				2E3EDC2D256A95DD00A0690F /* TextFieldTableViewCell.swift in Sources */,
@@ -311,6 +384,7 @@
 		};
 		2E3EDC23256A87F000A0690F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E44AA4B1FFECCCF149EEC490 /* Pods-Intership.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -329,6 +403,7 @@
 		};
 		2E3EDC24256A87F000A0690F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97D6B85F21EE5130061FFDA2 /* Pods-Intership.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -367,6 +442,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2E3EDC51256AE4C500A0690F /* IntershipModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2E3EDC52256AE4C500A0690F /* IntershipModel.xcdatamodel */,
+			);
+			currentVersion = 2E3EDC52256AE4C500A0690F /* IntershipModel.xcdatamodel */;
+			path = IntershipModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2E3EDC06256A87EF00A0690F /* Project object */;
 }

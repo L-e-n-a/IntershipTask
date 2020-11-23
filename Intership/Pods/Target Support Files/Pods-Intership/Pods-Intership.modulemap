@@ -1,0 +1,6 @@
+framework module Pods_Intership {
+  umbrella header "Pods-Intership-umbrella.h"
+
+  export *
+  module * { export * }
+}
