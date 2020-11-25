@@ -20,6 +20,8 @@
 		2E3EDC36256A97EA00A0690F /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3EDC35256A97EA00A0690F /* ButtonTableViewCell.swift */; };
 		2E3EDC53256AE4C500A0690F /* IntershipModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E3EDC51256AE4C500A0690F /* IntershipModel.xcdatamodeld */; };
 		2EB599D2256E6FBC007644F8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB599D1256E6FBC007644F8 /* UIImageView+Extension.swift */; };
+		2EB599D6256E89D7007644F8 /* CompaniesTabBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB599D5256E89D7007644F8 /* CompaniesTabBarTableViewController.swift */; };
+		2EB599D9256E89EE007644F8 /* EmployeesTabBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB599D8256E89EE007644F8 /* EmployeesTabBarTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		2E3EDC35256A97EA00A0690F /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		2E3EDC52256AE4C500A0690F /* IntershipModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IntershipModel.xcdatamodel; sourceTree = "<group>"; };
 		2EB599D1256E6FBC007644F8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		2EB599D5256E89D7007644F8 /* CompaniesTabBarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesTabBarTableViewController.swift; sourceTree = "<group>"; };
+		2EB599D8256E89EE007644F8 /* EmployeesTabBarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesTabBarTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 				2E3EDC11256A87EF00A0690F /* AppDelegate.swift */,
 				2E3EDC13256A87EF00A0690F /* SceneDelegate.swift */,
 				2E3EDC17256A87EF00A0690F /* Main.storyboard */,
+				2EB599DB256E8A0A007644F8 /* TabBarItems */,
 				2E3EDC51256AE4C500A0690F /* IntershipModel.xcdatamodeld */,
 				2E3EDC38256A996E00A0690F /* TableViewCells */,
 				2E3EDC26256A88CA00A0690F /* NewWorkerViewController.swift */,
@@ -94,6 +99,15 @@
 				2E3EDC35256A97EA00A0690F /* ButtonTableViewCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		2EB599DB256E8A0A007644F8 /* TabBarItems */ = {
+			isa = PBXGroup;
+			children = (
+				2EB599D8256E89EE007644F8 /* EmployeesTabBarTableViewController.swift */,
+				2EB599D5256E89D7007644F8 /* CompaniesTabBarTableViewController.swift */,
+			);
+			path = TabBarItems;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,10 +184,12 @@
 				2E3EDC33256A978500A0690F /* CompanyListTableViewController.swift in Sources */,
 				2E3EDC53256AE4C500A0690F /* IntershipModel.xcdatamodeld in Sources */,
 				2EB599D2256E6FBC007644F8 /* UIImageView+Extension.swift in Sources */,
+				2EB599D6256E89D7007644F8 /* CompaniesTabBarTableViewController.swift in Sources */,
 				2E3EDC12256A87EF00A0690F /* AppDelegate.swift in Sources */,
 				2E3EDC2A256A959F00A0690F /* ImageTableViewCell.swift in Sources */,
 				2E3EDC2D256A95DD00A0690F /* TextFieldTableViewCell.swift in Sources */,
 				2E3EDC14256A87EF00A0690F /* SceneDelegate.swift in Sources */,
+				2EB599D9256E89EE007644F8 /* EmployeesTabBarTableViewController.swift in Sources */,
 				2E3EDC27256A88CA00A0690F /* NewWorkerViewController.swift in Sources */,
 				2E3EDC30256A963100A0690F /* CompanyTableViewCell.swift in Sources */,
 			);

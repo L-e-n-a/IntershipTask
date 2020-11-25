@@ -23,7 +23,6 @@ class ImageTableViewCell: UITableViewCell {
     }
     
     public func downloadAvatarPicture () {
-        
         guard let url = URL(string: "https://picsum.photos/200") else { return }
         
         avatar.loadImage(from: url) {[weak self] (url) in
@@ -31,5 +30,10 @@ class ImageTableViewCell: UITableViewCell {
                 self?.didLoadImage?(imageUrl)
             }
         }
+    }
+    
+    public func loadImage(url: URL?) {
+        guard let url = url else { return }
+        avatar.loadImage(from: url, completion: nil)
     }
 }

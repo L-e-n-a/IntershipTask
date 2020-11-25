@@ -18,6 +18,9 @@ private enum CellType: Int {
 }
 
 class NewWorkerViewController: UITableViewController {
+    
+    public var workerToShow: WorkerEntity?
+    
     private var imageURL: URL?
     private var name: String?
     private var surname: String?
@@ -31,11 +34,14 @@ class NewWorkerViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let worker = workerToShow {
+            navigationItem.title = "\(worker.name ?? "") \(worker.second_name ?? "")"
+        }
     }
     
     //MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return workerToShow == nil ? 6 : 5
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,10 +55,12 @@ class NewWorkerViewController: UITableViewController {
         switch cellType {
         case .imageCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as! ImageTableViewCell
+            cell.loadImage(url: workerToShow?.image)
             baseCell = cell
             
         case .nameCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextFieldTableViewCell", for: indexPath) as! TextFieldTableViewCell
+            cell.textField.text = workerToShow?.name
             cell.textField.placeholder = "Name"
             cell.textFieldDidChange = {[weak self] text in
                 self?.name = text
@@ -61,6 +69,7 @@ class NewWorkerViewController: UITableViewController {
             
         case .surnameCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextFieldTableViewCell", for: indexPath) as! TextFieldTableViewCell
+            cell.textField.text = workerToShow?.second_name
             cell.textField.placeholder = "Surname"
             cell.textFieldDidChange = {[weak self] text in
                 self?.surname = text
@@ -69,6 +78,7 @@ class NewWorkerViewController: UITableViewController {
             
         case .birthDayCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextFieldTableViewCell", for: indexPath) as! TextFieldTableViewCell
+            cell.textField.text = workerToShow?.birthday
             cell.textField.placeholder = "Birthday"
             cell.textFieldDidChange = {[weak self] text in
                 self?.birthday = text
@@ -79,6 +89,7 @@ class NewWorkerViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyTableViewCell", for:indexPath) as! CompanyTableViewCell
             
             cell.companyText.text = companyName ?? "Company"
+            cell.companyText.text = workerToShow?.company ?? "Company"
             
             baseCell = cell
             
