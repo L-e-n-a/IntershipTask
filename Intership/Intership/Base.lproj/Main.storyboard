@@ -32,25 +32,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageTableViewCell" rowHeight="161" id="QtT-FJ-kmc" customClass="ImageTableViewCell" customModule="Intership" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="161"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageTableViewCell" rowHeight="218" id="QtT-FJ-kmc" customClass="ImageTableViewCell" customModule="Intership" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="218"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QtT-FJ-kmc" id="DJN-Iv-oE7">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="161"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="218"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="j5K-xB-cfR">
-                                            <rect key="frame" x="132" y="6.5" width="150" height="147.5"/>
+                                            <rect key="frame" x="107" y="9" width="200" height="200"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="150" id="agP-SD-obe"/>
+                                                <constraint firstAttribute="height" constant="200" id="nG6-rS-lIS"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="j5K-xB-cfR" firstAttribute="leading" secondItem="DJN-Iv-oE7" secondAttribute="leading" constant="132" id="7vz-m8-PhL"/>
-                                        <constraint firstAttribute="trailing" secondItem="j5K-xB-cfR" secondAttribute="trailing" constant="132" id="Jwx-7q-Zeq"/>
-                                        <constraint firstAttribute="bottom" secondItem="j5K-xB-cfR" secondAttribute="bottom" constant="5.5" id="ZdC-hm-GSA"/>
-                                        <constraint firstItem="j5K-xB-cfR" firstAttribute="top" secondItem="DJN-Iv-oE7" secondAttribute="top" constant="5.5" id="hkq-gt-mqr"/>
+                                        <constraint firstItem="j5K-xB-cfR" firstAttribute="leading" secondItem="DJN-Iv-oE7" secondAttribute="leading" constant="107" id="EyR-4u-agW"/>
+                                        <constraint firstAttribute="bottom" secondItem="j5K-xB-cfR" secondAttribute="bottom" constant="7.5" id="GAQ-Wb-JBA"/>
+                                        <constraint firstItem="j5K-xB-cfR" firstAttribute="top" secondItem="DJN-Iv-oE7" secondAttribute="top" constant="8" id="bHk-zL-8N8"/>
+                                        <constraint firstAttribute="trailing" secondItem="j5K-xB-cfR" secondAttribute="trailing" constant="107" id="zwg-Jc-kUc"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -58,7 +58,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldTableViewCell" id="Gtb-Lf-Kd9" customClass="TextFieldTableViewCell" customModule="Intership" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="189" width="414" height="44.5"/>
+                                <rect key="frame" x="0.0" y="246" width="414" height="44.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gtb-Lf-Kd9" id="hAA-0O-LgI">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
@@ -82,7 +82,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CompanyTableViewCell" id="q0e-72-7cX" customClass="CompanyTableViewCell" customModule="Intership" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="233.5" width="414" height="45"/>
+                                <rect key="frame" x="0.0" y="290.5" width="414" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q0e-72-7cX" id="wDf-jS-vWT">
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="45"/>
@@ -110,7 +110,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonTableViewCell" id="nDP-J4-bNo" customClass="ButtonTableViewCell" customModule="Intership" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="278.5" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="335.5" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nDP-J4-bNo" id="6Ey-sF-kkX">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>

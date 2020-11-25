@@ -18,25 +18,25 @@ private enum CellType: Int {
 }
 
 class NewWorkerViewController: UITableViewController {
-    
-    private var image: URL?
+    private var imageURL: URL?
     private var name: String?
     private var surname: String?
     private var birthday: String?
     private var companyName: String?
     
+    private var context: NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
-    // MARK: - Table view data source
-    
+    //MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return 6
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -49,10 +49,6 @@ class NewWorkerViewController: UITableViewController {
         switch cellType {
         case .imageCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as! ImageTableViewCell
-           
-//            let url = URL(string: "https://picsum.photos/150/150")
-//            cell.avatar.kf.setImage(with: url)
-           
             baseCell = cell
             
         case .nameCell:
@@ -99,6 +95,7 @@ class NewWorkerViewController: UITableViewController {
         return baseCell
     }
     
+    //MARK: - Table view delegate
     override func tableView(_ tableView: UITableView,
                             viewForFooterInSection section: Int) -> UIView? {
         return UIView()
@@ -110,16 +107,42 @@ class NewWorkerViewController: UITableViewController {
             return
         }
         
-        if cellType == .companyCell {
+        switch cellType {
+        case .companyCell:
             let companiesListTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "CompanyListTableViewController") as? CompanyListTableViewController
             
             companiesListTableViewController?.delegate = self
             
             self.navigationController?.pushViewController(companiesListTableViewController!, animated: true)
+        case .imageCell:
+            let cell = tableView.cellForRow(at: indexPath) as! ImageTableViewCell
+            cell.downloadAvatarPicture()
+            cell.didLoadImage = {[weak self] (url) in
+                self?.imageURL = url
+            }
+        default: break
         }
-        
     }
     
+    //MARK: - Core data
+    private func saveData() {
+        let entity = NSEntityDescription.entity(forEntityName: "WorkerEntity", in: context)!
+        let worker = WorkerEntity(entity: entity, insertInto: context)
+        
+        worker.name = name
+        worker.second_name = surname
+        worker.birthday = birthday
+        worker.company = companyName
+        worker.image = imageURL
+        
+        do {
+            try context.save()
+        } catch (let error){
+            print(error.localizedDescription)
+        }
+    }
+    
+    //MARK: - Helpers
     private func showAlert() {
         
         let alert = UIAlertController(
@@ -133,25 +156,6 @@ class NewWorkerViewController: UITableViewController {
                             handler: nil))
         
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    private func saveData() {
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "WorkerEntity", in: context)!
-        let worker = WorkerEntity(entity: entity, insertInto: context)
-        
-        worker.name = name
-        worker.second_name = surname
-        worker.birthday = birthday
-        worker.company = companyName
-        
-        do {
-            try context.save()
-        } catch (let error){
-            print(error.localizedDescription)
-        }
     }
 }
 
